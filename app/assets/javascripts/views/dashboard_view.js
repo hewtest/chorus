@@ -1,3 +1,7 @@
+// @version 5
+// NO LONGER IN USE
+// applies to an older version of chorus
+
 chorus.views.Dashboard = chorus.views.Base.extend({
     constructorName: "DashboardView",
     templateName:"dashboard/main",

@@ -82,7 +82,7 @@
 
   $.extend($.facebox, {
     settings: {
-      opacity      : 0.2,
+      opacity      : 1,
       overlay      : true,
       loadingImage : '/images/facebox/loading.gif',
       closeImage   : '/images/facebox/closelabel.png',
@@ -93,11 +93,13 @@
         <div class="content"> \
         </div> \
         <div class="header"> \
-          <a href="#" class="close"><i class="close_image oi" data-glyph="x"></i></a> \
+          <a href="#" class="close"><span class="fa fa-times close_image"></span></i></a> \
         </div> \
       </div> \
     </div>'
     },
+
+// <i class="close_image oi" data-glyph="x">
 
     loading: function() {
       init()

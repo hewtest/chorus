@@ -106,7 +106,7 @@ describe("chorus.views.Header", function() {
 
     describe("#render", function() {
         beforeEach(function() {
-            spyOn(chorus, 'addClearButton');
+            spyOn(chorus, 'addSearchFieldModifications');
 
             this.view.session.loaded = true;
             this.view.session.trigger("loaded");
@@ -157,7 +157,7 @@ describe("chorus.views.Header", function() {
         });
 
         it("adds a clear button to the search field", function() {
-            expect(chorus.addClearButton).toHaveBeenCalledWith(this.view.$(".search input"));
+            expect(chorus.addSearchFieldModifications).toHaveBeenCalledWith(this.view.$(".search input"));
         });
 
         describe("typing in the search bar", function() {
@@ -419,7 +419,8 @@ describe("chorus.views.Header", function() {
                         });
 
                         it("displays the alpine help link", function () {
-                            expect(this.view.$("a.helpLink")).toHaveAttr('href', 'http://alpine.atlassian.net/wiki/display/CD/Chorus+Documentation+Home');
+//                          expect(this.view.$("a.helpLink")).toHaveAttr('href', 'http://alpine.atlassian.net/wiki/display/CD5/Chorus+Documentation+Home');
+                            expect(this.view.$("a.helpLink").attr('href')).toMatchTranslation("help.link_address.alpine");
                             expect(this.view.$("a.helpLink")).toHaveAttr('target', '_blank');
                         });
                     });
@@ -431,7 +432,8 @@ describe("chorus.views.Header", function() {
                         });
 
                         it("displays the non-alpine help link", function () {
-                            expect(this.view.$("a.helpLink")).toHaveAttr('href', 'http://alpine.atlassian.net/wiki/display/CD/Chorus+Documentation+Home?pivotal=true');
+//                             expect(this.view.$("a.helpLink")).toHaveAttr('href', 'http://alpine.atlassian.net/wiki/display/CD5/Chorus+Documentation+Home?pivotal=true');
+                            expect(this.view.$("a.helpLink").attr('href')).toMatchTranslation("help.link_address.pivotal");
                             expect(this.view.$("a.helpLink")).toHaveAttr('target', '_blank');
                         });
                     });
@@ -441,7 +443,7 @@ describe("chorus.views.Header", function() {
 
         describe("the drawer menu", function() {
             it("has a visible button", function() {
-                expect(this.view.$(".drawer i")).toHaveAttr("data-glyph", "menu");
+                expect(this.view.$(".drawer span")).toHaveId("primary-menu");
             });
 
             it("has a hidden popup menu", function() {

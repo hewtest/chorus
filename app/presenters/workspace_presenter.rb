@@ -1,6 +1,9 @@
 class WorkspacePresenter < Presenter
 
   def to_hash
+
+    model_owned_notes_recent_count = model.owned_notes.recent.count
+
     results = {
       :id => model.id,
       :name => model.name,
@@ -15,8 +18,8 @@ class WorkspacePresenter < Presenter
       :workfiles_count => model.workfiles.count,
       :insights_count => model.owned_notes.where(:insight => true).count,
       :recent_insights_count => model.owned_notes.where(:insight => true).recent.count,
-      :recent_comments_count => model.owned_notes.recent.count,
-      :has_recent_comments => model.owned_notes.recent.count > 0,
+      :recent_comments_count => model_owned_notes_recent_count,
+      :has_recent_comments => model_owned_notes_recent_count > 0,
       :has_milestones => model.milestones_count > 0
     }
 
@@ -69,6 +72,9 @@ class WorkspacePresenter < Presenter
 
     latest_5 = recent_notes_and_comments.sort_by(&:updated_at).last(5)
 
+    # TODO: Providing the "number_of_insights", "number_of_comments" below in addition to
+    #       the recent_insights_count and recent_comment_counts above with the same intention
+    #       but slightly different implementation. Needs to be refactored.
     {
       :number_of_insights => recent_insights.size,
       :number_of_comments => recent_notes.size + recent_comments.size - recent_insights.size,

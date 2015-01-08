@@ -1,6 +1,6 @@
 chorus.views.ProjectListHeader = chorus.views.Base.extend({
     constructorName: "ProjectListHeaderView",
-    templateName: "project_list_content_header",
+    templateName: "project_list_header",
     additionalClass: 'list_header',
 
     events: {
@@ -11,16 +11,15 @@ chorus.views.ProjectListHeader = chorus.views.Base.extend({
         this.projectCardListModel = new chorus.models.ProjectCardList();
         this.projectCardListModel.fetch({
             success: _.bind(function() {
-                var value = this.projectCardListModel.get('option');
-                this.list.fillOutContent(value);
-                this.$("select.workspace_filter").val(value);
-                this.$(".title").text(t('header.' + (value === 'members_only' ? 'my_projects' : value + '_projects')));
+                this.filterValue = this.projectCardListModel.get('option') || 'most_active';
+                this.list.fillOutContent(this.filterValue);
             }, this)
         });
     },
 
     postRender: function(e) {
         _.defer(_.bind(function () {
+            this.$("select.workspace_filter").val(this.filterValue);
             chorus.styleSelect(this.$("select.workspace_filter"));
         }, this));
     },
@@ -29,6 +28,7 @@ chorus.views.ProjectListHeader = chorus.views.Base.extend({
         e && e.preventDefault();
 
         var filterClass = this.$("select.workspace_filter").val();
+        this.filterValue = filterClass;
         if(this.projectlist.mostActive) {
             if(filterClass === 'members_only' || filterClass === 'all') {
                 this.list.fillOutContent(filterClass);
@@ -42,8 +42,6 @@ chorus.views.ProjectListHeader = chorus.views.Base.extend({
                 this.projectlist.triggerRender(filterClass === 'all');
             }
         }
-        this.$("select.workspace_filter").val(filterClass);
-        this.$(".title").text(t('header.' + (this.projectlist.mostActive ? 'most_active_projects' : (this.projectlist.noFilter ? 'all_projects' : 'my_projects'))));
         this.projectCardListModel.save({optionValue: filterClass});
     }
 });
