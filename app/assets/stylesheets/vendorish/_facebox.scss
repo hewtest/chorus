@@ -5,8 +5,8 @@
     top: 0;
     left: 0;
     z-index: $dialog-z-index;
-    /* overflow-y: auto; */
-    overflow-y: hidden;
+    overflow-y: auto;
+//     overflow-y: hidden;
     overflow-x: hidden;
     
     text-align: left;
@@ -29,18 +29,29 @@
         }
     }
 
-    .alert .content {
-        background: $body-background-color;
+    .header {
+        a.close {
+            position: absolute;
+            top: 9px;
+            right: 15px;
+            color: $color-text4;
+
+            // remove underlines 
+            &:hover::after {
+                text-decoration: none !important;	
+            }
+
+            &::after {
+                font-size: 14px;
+                font-family: FontAwesome;
+                content: "\f00d";  /* fa-times = X */
+            }
+        }
     }
 
-    .header {
-        .close {
-            position: absolute;
-            top: 7px;
-            right: 15px;
-            padding: 2px;
-            color: $color-text4;
-        }
+
+    .alert .content {
+        background: $body-background-color;
     }
 
     &.alert_facebox .close {
@@ -50,6 +61,11 @@
     .loading, .image {
         text-align: center;
     }
+}
+
+// class to use when the close "X" should not appear
+.no-close .close {
+    display: none;
 }
 
 /* .dialog_facebox, */

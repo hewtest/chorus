@@ -93,7 +93,7 @@
         <div class="content"> \
         </div> \
         <div class="header"> \
-          <a href="#" class="close"><span class="fa fa-times close_image"></span></a> \
+          <a href="#" class="close"></a> \
         </div> \
       </div> \
     </div>'
