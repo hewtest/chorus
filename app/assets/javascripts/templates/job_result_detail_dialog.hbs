@@ -1,3 +1,5 @@
+<div class="girdle">
+
 <div>
     <div class="line">
         <div class="col cols-8 started_at"><strong>{{t 'job.result_details.started'}}: </strong>{{displayTimestamp startedAt}}</div>
@@ -17,20 +19,25 @@
         </thead>
         <tbody>
         {{#each jobTaskResults}}
-        <tr>
-            <td>{{name}}</td>
-            <td>{{displayTimestamp startedAt}}</td>
-            <td>{{displayTimestamp finishedAt}}</td>
-            <td>{{displayDuration finishedAt startedAt}}</td>
-            <td>
-                {{#if payloadResultId}}
-                    {{workflowResultLink this}}
-                {{else}}
-                    {{status}}{{#if message}} - {{message}}{{/if}}
-                {{/if}}
-            </td>
-        </tr>
+            <tr>
+                <td>{{name}}</td>
+                <td>{{displayTimestamp startedAt}}</td>
+                <td>{{displayTimestamp finishedAt}}</td>
+                <td>{{displayDuration finishedAt startedAt}}</td>
+                <td>
+                    {{#if payloadResultId}}
+                        {{workflowResultLink this}}
+                    {{else}}
+                        {{status}}{{#if message}} - {{message}}{{/if}}
+                    {{/if}}
+                </td>
+            </tr>
         {{/each}}
         </tbody>
     </table>
 </div>
+
+</div>
+<!-- END girdle -->
+
+{{> closeWindowFormControls }}

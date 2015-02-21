@@ -1,6 +1,6 @@
 chorus.dialogs.JobResultDetail = chorus.dialogs.Base.extend({
     constructorName: 'JobResultDetailDialog',
-    templateName: "job_result_detail",
+    templateName: "job_result_detail_dialog",
     additionalClass: "dialog_wide",
 
     makeModel: function () {
