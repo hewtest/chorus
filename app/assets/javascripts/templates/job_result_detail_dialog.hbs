@@ -28,7 +28,13 @@
                     {{#if payloadResultId}}
                         {{workflowResultLink this}}
                     {{else}}
-                        {{status}}{{#if message}} - {{message}}{{/if}}
+<!--                         <span class="status {{status}}" title="{{statusDisplay}}"></span> -->
+{{status}}
+                        {{#if message}}
+                            {{status}}
+                            <br />
+                            {{t 'job.result_details.message_title'}}: {{message}}
+                        {{/if}}
                     {{/if}}
                 </td>
             </tr>
