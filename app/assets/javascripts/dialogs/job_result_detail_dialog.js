@@ -11,32 +11,40 @@ chorus.dialogs.JobResultDetail = chorus.dialogs.Base.extend({
             this.model = new chorus.models.JobResult({jobId: this.job.id, id: 'latest'});
             this.model.fetch();
         }
-
     },
 
     setup: function () {
         this.title = t("job.result_details.title", {jobName: this.job.name()});
-
         this.render();
     },
 
     additionalContext: function () {        
         return {
-            statusDisplay: this.taskStatus,
+            statusDisplayMessage: this.taskStatusMessage,
+            statusDisplayClass: this.taskStatusClass
         };
     },
-    
-    // jobStatus: map the success or failure status to visuals
-    taskStatus: function () {
+
+    // jobStatus: map the success | failure status to user-facing text
+    taskStatusMessage: function () {
         var status = this.status;
-        var m;
         if (status === "success" ) {
-            m = t("job.result_details.status_success");
+            return t("job.result_details.status_success");
         }
         else if (status === "failure") {
-            m = t("job.result_details.status_failure");
+            return t("job.result_details.status_failure");
         }
-        return m;
-    }    
+    },
+    
+    // map success | failure status to css classes
+    taskStatusClass: function () {
+        var status = this.status;
+        if (status === "success" ) {
+            return ("success");
+        }
+        else if (status === "failure") {
+            return ("failure");
+        }
+    }
 
 });

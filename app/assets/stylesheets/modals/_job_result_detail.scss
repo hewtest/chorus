@@ -25,7 +25,7 @@ $default-table-header-fontcolor: #666;
             padding: $default-table-cell-padding;
         }
     }
-    
+
     .status {
         display: inline-block;
         position: relative;
@@ -41,7 +41,7 @@ $default-table-header-fontcolor: #666;
                 @include alert-success-icon;
             }
         }
-        
+
         &.failure {
             &::before {
                 color: $error-icon-color;
@@ -52,5 +52,5 @@ $default-table-header-fontcolor: #666;
     .status_message {
         margin: 6px 0 0 0;
     }
-    
+
 }

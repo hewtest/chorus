@@ -28,9 +28,8 @@
                     {{#if payloadResultId}}
                         {{workflowResultLink this}}
                     {{else}}
-                        <span class="status {{status}}"></span>
-                            <!-- {{status}}  -->
-                            {{../../statusDisplay}}
+                        <span class="status {{../../statusDisplayClass}}"></span>
+                            {{../../statusDisplayMessage}}
                         {{#if message}}
                             <p class="status_message">
                             {{t 'job.result_details.message_title'}}: {{message}}
