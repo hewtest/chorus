@@ -6,7 +6,7 @@
         <div class="col cols-8 finished_at"><strong>{{t 'job.result_details.finished'}}: </strong>{{displayTimestamp finishedAt}}</div>
         <div class="col cols-ext duration"><strong>{{t 'job.result_details.duration'}}: </strong>{{displayDuration finishedAt startedAt}}</div>
     </div>
-    
+
     <table class="app_table">
         <thead>
             <tr>
@@ -28,12 +28,13 @@
                     {{#if payloadResultId}}
                         {{workflowResultLink this}}
                     {{else}}
-<!--                         <span class="status {{status}}" title="{{statusDisplay}}"></span> -->
-{{status}}
+                        <span class="status {{status}}"></span>
+                            <!-- {{status}}  -->
+                            {{../../statusDisplay}}
                         {{#if message}}
-                            {{status}}
-                            <br />
+                            <p class="status_message">
                             {{t 'job.result_details.message_title'}}: {{message}}
+                            </p>
                         {{/if}}
                     {{/if}}
                 </td>

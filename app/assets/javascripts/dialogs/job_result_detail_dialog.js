@@ -11,8 +11,7 @@ chorus.dialogs.JobResultDetail = chorus.dialogs.Base.extend({
             this.model = new chorus.models.JobResult({jobId: this.job.id, id: 'latest'});
             this.model.fetch();
         }
-        
-//         this.model.get("action")
+
     },
 
     setup: function () {
@@ -21,38 +20,23 @@ chorus.dialogs.JobResultDetail = chorus.dialogs.Base.extend({
         this.render();
     },
 
-    additionalContext: function () {
-        //console.log ("additionalContext");
-        //console.log ("1: "+ this.model.status); 
-        //console.log ("2: "+ this.model.status() );
-        //console.log ("3: "+ this.status ); undefined
-        //console.log ("4: "+ this.status() );
-        //console.log ("5: "+ status );
-        //console.log ("6+: "+ this.model.get('status') );
-        //console.log ("7: "+ this.get("status") );
-        // console.log ("8: "+ this.job.get('status') );
-         //console.log ("10: "+ this.model.jobTaskResults);
-         //.get('status') );
-         //console.log ("12: "+ this.job.jobTaskResults);
-    
-        
+    additionalContext: function () {        
         return {
-            statusDisplay: this.taskStatus(),
+            statusDisplay: this.taskStatus,
         };
     },
     
     // jobStatus: map the success or failure status to visuals
     taskStatus: function () {
-        return ("smelly");
-//         if (this.model.status === "success" ) {
-//             console.log ("success");
-//         }
-//         else if (this.model.status === "failure" ) {
-//             console.log ("failure");
-//         }
-    
-    }
-// t("job.result_details.status_success") = Successful
-// t("job.result_details.status_failure") = Task failed
+        var status = this.status;
+        var m;
+        if (status === "success" ) {
+            m = t("job.result_details.status_success");
+        }
+        else if (status === "failure") {
+            m = t("job.result_details.status_failure");
+        }
+        return m;
+    }    
 
 });
