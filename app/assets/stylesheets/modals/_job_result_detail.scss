@@ -27,11 +27,19 @@ $table-footer-bg: #FFDDBB;
             padding: $default-table-cell-padding;
         }
         
-        tfoot {
-        
+        #job_run_summary {
             td {
-                background-color: $table-footer-bg;
+                border-top-width: 2px;
+                border-top-style: dotted;
+                border-top-color: darken($border-color-dark, 20%);
+//                 background-color: $table-footer-bg;
                 font-weight: $semibold;
+            }
+            &.job_successful {
+                background-color: $success-background-color;
+            }
+            &.job_failed {
+                background-color: $alert-background-color;
             }
         }
         

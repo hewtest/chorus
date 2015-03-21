@@ -1,13 +1,6 @@
 <div class="girdle">
 
 <div>
-<!-- 
-    <div class="line">
-        <div class="col cols-8 started_at"><strong>{{t 'job.result_details.started'}}: </strong>{{displayTimestamp startedAt}}</div>
-        <div class="col cols-8 finished_at"><strong>{{t 'job.result_details.finished'}}: </strong>{{displayTimestamp finishedAt}}</div>
-        <div class="col cols-ext duration"><strong>{{t 'job.result_details.duration'}}: </strong>{{displayDuration finishedAt startedAt}}</div>
-    </div>
- -->
 
     <table id=job_run_details_table">
         <thead>
@@ -41,19 +34,20 @@
                 </td>
             </tr>
         {{/each}}
-        </tbody>
-        <tfoot>
-            <tr>
-                <td>Job Summary</td>
+
+            <tr id="job_run_summary" class="{{lastRunStatusStyle}}">
+                <td>{{t "job.result_details.summary_header"}}</td>
                 <td>{{displayTimestamp startedAt}}</td>
                 <td>{{displayTimestamp finishedAt}}</td>
                 <td>{{displayDuration finishedAt startedAt}}</td>
                 <td>
-                    Job status
+                    {{t lastRunStatusKey}}
                 
                 </td>
             </tr>
-        </tfoot>
+            
+        </tbody>
+
         
     </table>
 </div>

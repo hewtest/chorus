@@ -139,7 +139,7 @@ chorus.models.Job = chorus.models.Base.extend({
     },
 
     lastRunStatusKey: function () {
-        return this.get("lastRunFailed") ? "job.status.jobFailed" : "job.status.JobSucceeded";
+        return this.get("lastRunFailed") ? "job.status.job_failed" : "job.status.job_succeeded";
     },
     
     lastRunLinkKey: function () {
