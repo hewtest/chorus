@@ -27,7 +27,7 @@
         <span class="last_run">
             <strong>{{t "job.last_run"}}:</strong>
             {{#if lastRun}}
-                <a class='last_run_date' href='#'>{{displayTimestamp lastRun}} {{t lastRunLinkKey}}</a>
+                <a class='last_run_date' href='#'>{{displayTimestamp lastRun}} {{t lastRunStatusKey}} {{t lastRunLinkKey}}</a>
             {{else}}
                 -
             {{/if}}
