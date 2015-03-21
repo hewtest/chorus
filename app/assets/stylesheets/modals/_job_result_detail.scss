@@ -32,17 +32,15 @@ $table-footer-bg: #FFDDBB;
                 border-top-width: 2px;
                 border-top-style: dotted;
                 border-top-color: darken($border-color-dark, 20%);
-//                 background-color: $table-footer-bg;
                 font-weight: $semibold;
             }
             &.job_successful {
                 background-color: $success-background-color;
             }
             &.job_failed {
-                background-color: $alert-background-color;
+                background-color: #FCF8E3; // ?$alert-background-color ?
             }
         }
-        
     }
 
     .status {
