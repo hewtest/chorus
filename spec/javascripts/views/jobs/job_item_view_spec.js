@@ -122,7 +122,7 @@ describe("chorus.views.JobItem", function () {
                 });
 
                 it("has link to details", function () {
-                    expect(this.view.$('.last_run')).toContainTranslation('job.show_details.link');
+                    expect(this.view.$('.last_run')).toContainTranslation('job.status.job_failed');
                 });
             });
 
@@ -133,7 +133,7 @@ describe("chorus.views.JobItem", function () {
                 });
 
                 it("has link to show details", function () {
-                    expect(this.view.$('.last_run')).toContainTranslation('job.show_details.link');
+                    expect(this.view.$('.last_run')).toContainTranslation('job.status.job_succeeded');
                 });
             });
         });

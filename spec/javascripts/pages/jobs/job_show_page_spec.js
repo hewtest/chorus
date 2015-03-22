@@ -80,7 +80,7 @@ describe("chorus.pages.JobsShowPage", function () {
                 });
 
                 it("should include link to show details", function () {
-                    expect(this.page.$('a.last_run_date')).toContainTranslation('job.show_details.link');
+                    expect(this.page.$('a.last_run_date')).toContainTranslation('job.status.job_failed');
                 });
             });
 
@@ -92,7 +92,7 @@ describe("chorus.pages.JobsShowPage", function () {
                 });
 
                 it("should include link to show details", function () {
-                    expect(this.page.$('a.last_run_date')).toContainTranslation('job.show_details.link');
+                    expect(this.page.$('a.last_run_date')).toContainTranslation('job.status.job_succeeded');
                 });
             });
         });
