@@ -34,16 +34,17 @@ $table-footer-bg: #FFDDBB;
                 border-top-color: darken($border-color-dark, 20%);
                 font-weight: $semibold;
             }
-            &.job_successful {
+                
+            &.success {
                 background-color: $success-background-color;
             }
-            &.job_failed {
-                background-color: #FCF8E3; // ?$alert-background-color ?
+            &.failure {
+                background-color: #FAEEDD; // ?$alert-background-color ?
             }
         }
     }
 
-    .status {
+    .statusMarker {
         display: inline-block;
         position: relative;
         top: 2px;

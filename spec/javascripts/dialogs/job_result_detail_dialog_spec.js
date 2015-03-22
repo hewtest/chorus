@@ -32,16 +32,11 @@ describe("chorus.dialogs.JobResultDetail", function () {
             });
             
 
-            it("displays the started and finished times for overall job", function () {
-                expect(this.dialog.$('.started_at')).toContainText(Handlebars.helpers.displayTimestamp(this.dialog.model.get('startedAt')));
-                expect(this.dialog.$('.finished_at')).toContainText(Handlebars.helpers.displayTimestamp(this.dialog.model.get('finishedAt')));
+            it("displays the start, finish, and duration timing for overall job", function () {
+                expect(this.dialog.$('.job_started_at')).toContainText(Handlebars.helpers.displayTimestamp(this.dialog.model.get('startedAt')));
+                expect(this.dialog.$('.job_finished_at')).toContainText(Handlebars.helpers.displayTimestamp(this.dialog.model.get('finishedAt')));
+                expect(this.dialog.$('.job_duration')).toContainText(Handlebars.helpers.displayDuration(this.dialog.model.get('finishedAt'), this.dialog.model.get('startedAt')));
             });
-
-            it("displays the duration for overall job", function () {
-                expect(this.dialog.$('.duration')).toContainText(Handlebars.helpers.displayDuration(this.dialog.model.get('finishedAt'), this.dialog.model.get('startedAt')));
-            });
-
-
 
         });
     });

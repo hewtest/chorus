@@ -29,7 +29,7 @@ chorus.dialogs.JobResultDetail = chorus.dialogs.Base.extend({
 
     // map success | failure status to css classes
     jobRunStatusStyle: function () {
-        return this.job.get("lastRunFailed") ? "job_failed" : "job_successful";
+        return this.job.get("lastRunFailed") ? "failure" : "success";
     },
     
     // taskStatus: map the success | failure status to user-facing text
