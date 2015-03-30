@@ -33,6 +33,7 @@ chorus.dialogs.JobResultDetail = chorus.dialogs.Base.extend({
     },
     
     // taskStatus: map the success | failure status to user-facing text
+
     taskStatusMessage: function () {
         var status = this.status;
         if (status === "success" ) {
