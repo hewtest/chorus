@@ -29,8 +29,7 @@
                         {{workflowResultLink this}}
                     {{else}}
 
-                        <span class="statusMarker {{../../statusDisplayClass}}"></span>
-                            {{../../statusDisplayMessage}}
+                        <span class="statusMarker {{../../statusDisplayClass}}"></span>{{../../statusDisplayMessage}}
                         {{#if message}}
                             <p class="status_message">
                             {{t 'job.result_details.message_title'}}: {{message}}
