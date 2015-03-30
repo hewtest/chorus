@@ -1,9 +1,10 @@
 class ChorusConfigPresenter < Presenter
   def to_hash
-    {
-        :external_auth_enabled => LdapClient.enabled?,
+
+    hash = {
         :gpfdist_configured => model.gpfdist_configured?,
         :tableau_configured => model.tableau_configured?,
+        :tableau_sites => model.tableau_sites,
         :file_sizes_mb_workfiles => model['file_sizes_mb.workfiles'],
         :file_sizes_mb_csv_imports => model['file_sizes_mb.csv_imports'],
         :file_sizes_mb_user_icon => model['file_sizes_mb.user_icon'],
@@ -21,5 +22,14 @@ class ChorusConfigPresenter < Presenter
         :license => present(License.instance, options),
         :restrict_data_source_creation => model.restrict_data_source_creation?
     }
+
+    begin
+      hash[:external_auth_enabled] = LdapClient.enabled?
+    rescue LdapClient::LdapNotCorrectlyConfigured => e
+      Rails.logger.error e.message
+      hash[:external_auth_enabled] = false
+    end
+
+    return hash
   end
 end

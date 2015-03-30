@@ -453,7 +453,6 @@ chorus.pages.StyleGuidePage.SiteElementsView = chorus.views.Bare.extend({
 
     buildContentDetails: function() {
         var views = {
-            "User Details": new chorus.views.StaticTemplate("plain_text", {text: t("users.details")}),
 
             "Dataset Details": new chorus.views.DatasetContentDetails({
                 dataset: this.models.dataset,
@@ -491,7 +490,7 @@ chorus.pages.StyleGuidePage.SiteElementsView = chorus.views.Bare.extend({
 
             "Breadcrumbs": new chorus.views.BreadcrumbsView({
                 breadcrumbs: [
-                    { label: t("breadcrumbs.home"), url: "#/" },
+                    { label: "Example Home", url: "#/" },
                     { label: t("breadcrumbs.users"), url: "#/users" },
                     { label: t("breadcrumbs.new_user") }
                 ]

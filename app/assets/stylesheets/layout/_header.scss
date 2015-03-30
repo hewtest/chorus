@@ -12,6 +12,9 @@ $notification-token-width: $header-margin * 2;
 
 $branding-opacity: 0.93;
 
+$menu-item-height-default: 40px;
+
+
 @mixin full-item-link($height) {
     &:hover, &.selected {
         background-color: $list-hover-color;
@@ -31,6 +34,28 @@ $branding-opacity: 0.93;
                         
             sub { @include secondary-text-small; }
         }
+    }
+}
+
+// WIP
+// dupe of full-item-link, but factoring out the <div>
+// and simplifying
+
+@mixin username-item-link($height) {
+    &:hover, &.selected {
+        background-color: $list-hover-color;
+    }
+
+    a {
+        height: $height;
+        width: 100%;
+
+        text-decoration: none;
+
+        display: inline-block;
+        vertical-align: middle;
+        padding-left: 15px;
+        line-height: $height;
     }
 }
 
@@ -136,11 +161,10 @@ $branding-opacity: 0.93;
                 float: right;
 
                 .caret {
-                    font-size: 14px;
+                    font-size: $default-font-size;
                 }
 
                 &.active .caret::before {
-
                     /* when activating the menu, switch thecaret */
                     content:  "\f0d8";  // =  fa-caret-up
                 }
@@ -195,7 +219,7 @@ $branding-opacity: 0.93;
                 z-index: 1;
 
                 &.search_clear {
-                    font-size: 14px;
+                    font-size: $default-font-size;
                     position: relative;
                     top: 2px;
                 }
@@ -266,7 +290,7 @@ $branding-opacity: 0.93;
                 @include full-item-link(60px);
             }
             li.search_all {
-                @include full-item-link(40px);
+                @include full-item-link($menu-item-height-default);
                 padding-top:5px;
                 padding-bottom: 5px;
             }   
@@ -333,12 +357,12 @@ $branding-opacity: 0.93;
 
         .menu.popup_username {
             line-height: 24px;
-            /* add 1 for 1px border around popup */
+            /* account for 1px border around popup */
             right: $header-margin-right - 1;
             width: $header-margin * 6;
 
             li {
-                @include full-item-link(40px)
+                @include username-item-link($menu-item-height-default)
             }
         }
 
@@ -393,7 +417,7 @@ $branding-opacity: 0.93;
                 padding: 10px 0;
                 display: block;
                 text-align: center;
-                font-size: 12px;
+                font-size: $small-font;
                 font-weight: $semibold;
             }
         }

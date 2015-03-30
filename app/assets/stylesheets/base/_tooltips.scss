@@ -50,7 +50,7 @@ $more-info-color: #888888;
 }
 
 .tooltip-error {
-    @include tooltip($error-text-color, #B61B1D, #B61B1D);
+    @include tooltip($error-tooltip-text-color, #B61B1D, #B61B1D);
     /* box-shadow: $shadow-canon; */
 
     .ui-tooltip-content {
@@ -71,7 +71,7 @@ $more-info-color: #888888;
 }
 
 .tooltip-function {
-    @include tooltip($error-tooltiptext-color, #282828, #282828);
+    @include tooltip($normal-tooltip-text-color, #282828, #282828);
 
     .ui-tooltip-content {
         font-size: $small-font;
@@ -110,7 +110,7 @@ $more-info-color: #888888;
         border-right: none;
     }
     a {
-        font-size: 12px;
+        font-size: $small-font;
         cursor: pointer;
     }
 }
@@ -156,7 +156,7 @@ $more-info-color: #888888;
   }
 
   .ui-tooltip-content {
-    font-size: 14px;
+    font-size: $default-font-size;
     width: 450px;
   }
 }
