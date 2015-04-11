@@ -65,6 +65,7 @@
             ["hdfs_data_sources/:dataSourceId/browseFile/:id", "HdfsShowFile"],
             ["notifications", "NotificationIndex"],
             ["styleguide", "StyleGuide"],
+            ["signup", "Signup"],
             ["tags", "TagIndex"],
             ["tags/:name", "TagShow"],
             ["tags/:scope/:entityType/:name", "TagShow"],
@@ -107,7 +108,7 @@
         },
 
         pageRequiresLogin: function(pageName) {
-            return !_.include(["Login", "StyleGuide"], pageName);
+            return !_.include(["Login", "StyleGuide", "Signup"], pageName);
         },
 
         generateRouteCallback: function(className) {
