@@ -57,7 +57,10 @@
         }
     }
 
-    .form_controls button {
-        float: left;
+    .form_controls {
+        text-align: center;
+        button {
+            display: inline;
+	}
     }
 }
