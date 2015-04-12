@@ -46,7 +46,11 @@
             </tr>
 	    <tr>
                 <td class="label">{{t "signup.phone"}}</td>
-                <td class="item">some other control</td>
+                <td class="item">
+                  <input class="phone" type="text" name="phone" size="10"/>
+		  {{t "signup.extension"}}
+                  <input class="extension" type="text" name="extension" size="10"/>
+                </td>
             </tr>
 	    <tr>
                 <td class="label">{{t "signup.email"}}</td>
