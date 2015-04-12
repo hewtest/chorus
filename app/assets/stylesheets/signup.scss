@@ -37,11 +37,13 @@
     }
 
     .phone {
+        display: inline;
         width: 40%;
 	padding-right: 40px;
     }
 
     .extension {
+        display: inline;
         width: 20%;
     }
 }
