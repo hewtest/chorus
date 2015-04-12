@@ -23,15 +23,14 @@
     }
 
     .content {
-        tr {
-            padding-top: 5px;
-        }
         td.label {
 	    width: 200px;
             text-align: right;
+            padding-top: 5px;
 	    padding-right: 5px;
         }
 	td.item {
+            padding-top: 5px;
 	}
     }
 
