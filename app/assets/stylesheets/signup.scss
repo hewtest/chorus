@@ -22,16 +22,14 @@
         font-weight: normal;
     }
 
-    .content{
-        .text {
-            padding: 10px;
+    .content {
+        td.label {
+	    width: 100px;
+            margin-left: auto;
         }
-        .items li {
-            padding-left: 20px;
-        }
-        .item {
-            float: right;
-            margin-right: 10px;
-        }
+	td.item {
+	    width: 400px;
+            margin-right: auto;
+	}
     }
 }

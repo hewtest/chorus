@@ -1,13 +1,15 @@
 <div class="signup_box">
-    <h1 class="title">title</h1>
+    <h1 class="title">{{t "signup.title"}}</h1>
     <div class="content">
-        <ul class="list_vertical_divided items">
-            <li class="">
-                <strong>label:</strong> <span class="item">item</span>
-            </li>
-            <li class="">
-                <strong>label:</strong> <span class="item">item</span>
-            </li>
-       </ul>
+        <table>
+	    <tr>
+                <td class="label">label:</td>
+                <td> class="item"><input type="text" name="firstName" length="32" maxlength="256"/></td>
+            </tr>
+	    <tr>
+                <td class="label">a longer label:</td>
+                <td> class="item"><input type="text" name="firstName" length="16" maxlength="256"/></td>
+            </tr>
+        </table>
     </div>
 </div>
