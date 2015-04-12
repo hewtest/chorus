@@ -25,11 +25,11 @@
     .content {
         td.label {
 	    width: 100px;
-            margin-left: auto;
+            text-align: right;
         }
 	td.item {
 	    width: 400px;
-            margin-right: auto;
+            text-align: left;
 	}
     }
 }
