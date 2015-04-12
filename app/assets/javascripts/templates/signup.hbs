@@ -1,70 +1,76 @@
 <div class="signup_box">
     <h1 class="title">{{t "signup.page_title"}}</h1>
     <div class="content">
-        <table>
-	    <tr>
-                <td class="label">{{t "signup.first_name"}}</td>
-                <td class="item"><input type="text" name="firstName" size="32"/></td>
-            </tr>
-	    <tr>
-                <td class="label">{{t "signup.last_name"}}</td>
-                <td class="item"><input type="text" name="lastName" size="32"/></td>
-            </tr>
-	    <tr>
-                <td class="label">{{t "signup.company"}}</td>
-                <td class="item"><input type="text" name="company" size="32"/></td>
-            </tr>
-	    <tr>
-                <td class="label">{{t "signup.title"}}</td>
-                <td class="item"><input type="text" name="title" size="32"/></td>
-            </tr>
-	    <tr>
-                <td class="label">{{t "signup.address_1"}}</td>
-                <td class="item"><input type="text" name="address1" size="32"/></td>
-            </tr>
-	    <tr>
-                <td class="label">{{t "signup.address_2"}}</td>
-                <td class="item"><input type="text" name="address2" size="32"/></td>
-            </tr>
-	    <tr>
-                <td class="label">{{t "signup.city"}}</td>
-                <td class="item"><input type="text" name="city" size="16"/></td>
-            </tr>
-	    <tr>
-                <td class="label">{{t "signup.state"}}</td>
-                <td class="item">
-		    <select>
-                        <option>Alabama</option>
-                        <option>Alaska</option>
-                        <option>...</option>
-                    </select>
-		</td>
-            </tr>
-	    <tr>
-                <td class="label">{{t "signup.zip_code"}}</td>
-                <td class="item"><input class="zipCode" type="text" name="zipCode" size="10"/></td>
-            </tr>
-	    <tr>
-                <td class="label">{{t "signup.phone"}}</td>
-                <td class="item">
-                  <input class="phone" type="text" name="phone" size="10"/>
-		  {{t "signup.extension"}}
-                  <input class="extension" type="text" name="extension" size="10"/>
-                </td>
-            </tr>
-	    <tr>
-                <td class="label">{{t "signup.email"}}</td>
-                <td class="item"><input type="text" name="email" size="32"/></td>
-            </tr>
-	    <tr>
-                <td class="label">{{t "signup.email_confirmation"}}</td>
-                <td class="item"><input type="text" name="emailConfirmation" size="32"/></td>
-            </tr>
-        </table>
-	<div class="interestedInDevelopment">
-           <label for="interestedInDevelopment">{{t "signup.interested_in_development"}}</label>
-           <input type="checkbox" name="interestedInDevelopment"/>
-
-        </div>
+        <form action="">
+            <table>
+                <tr>
+                    <td class="label">{{t "signup.first_name"}}</td>
+                    <td class="item"><input type="text" name="firstName" size="32"/></td>
+                </tr>
+                <tr>
+                    <td class="label">{{t "signup.last_name"}}</td>
+                    <td class="item"><input type="text" name="lastName" size="32"/></td>
+                </tr>
+                <tr>
+                    <td class="label">{{t "signup.company"}}</td>
+                    <td class="item"><input type="text" name="company" size="32"/></td>
+                </tr>
+                <tr>
+                    <td class="label">{{t "signup.title"}}</td>
+                    <td class="item"><input type="text" name="title" size="32"/></td>
+                </tr>
+                <tr>
+                    <td class="label">{{t "signup.address_1"}}</td>
+                    <td class="item"><input type="text" name="address1" size="32"/></td>
+                </tr>
+                <tr>
+                    <td class="label">{{t "signup.address_2"}}</td>
+                    <td class="item"><input type="text" name="address2" size="32"/></td>
+                </tr>
+                <tr>
+                    <td class="label">{{t "signup.city"}}</td>
+                    <td class="item"><input type="text" name="city" size="16"/></td>
+                </tr>
+                <tr>
+                    <td class="label">{{t "signup.state"}}</td>
+                    <td class="item">
+                        <select>
+                            <option>Alabama</option>
+                            <option>Alaska</option>
+                            <option>...</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">{{t "signup.zip_code"}}</td>
+                    <td class="item"><input class="zipCode" type="text" name="zipCode" size="10"/></td>
+                </tr>
+                <tr>
+                    <td class="label">{{t "signup.phone"}}</td>
+                    <td class="item">
+                      <input class="phone" type="text" name="phone" size="10"/>
+                      {{t "signup.extension"}}
+                      <input class="extension" type="text" name="extension" size="10"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">{{t "signup.email"}}</td>
+                    <td class="item"><input type="text" name="email" size="32"/></td>
+                </tr>
+                <tr>
+                    <td class="label">{{t "signup.email_confirmation"}}</td>
+                    <td class="item"><input type="text" name="emailConfirmation" size="32"/></td>
+                </tr>
+            </table>
+            <div class="interestedInDevelopment">
+               <label for="interestedInDevelopment">{{t "signup.interested_in_development"}}</label>
+               <input type="checkbox" name="interestedInDevelopment"/>
+    
+            </div>
+            <div class="form_controls">
+                <button type="button" class="cancel modalish">{{t "actions.cancel"}}</button>
+                <button type="submit" class="submit modalish">{{t "actions.submit"}}</button>
+            </div>
+        </form>
     </div>
 </div>

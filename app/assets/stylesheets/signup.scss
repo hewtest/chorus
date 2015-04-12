@@ -26,11 +26,11 @@
         td.label {
 	    width: 200px;
             text-align: right;
-            padding-top: 5px;
+            padding-top: 10px;
 	    padding-right: 5px;
         }
 	td.item {
-            padding-top: 5px;
+            padding-top: 10px;
 	}
     }
 
@@ -50,7 +50,8 @@
     }
 
     .interestedInDevelopment {
-        padding-top: 5px;
+        padding-top: 10px;
+	text-align: center;
         input {
             display: inline;
         }
