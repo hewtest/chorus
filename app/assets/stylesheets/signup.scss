@@ -23,6 +23,9 @@
     }
 
     .content {
+        tr {
+            padding-top: 5px;
+        }
         td.label {
 	    width: 200px;
             text-align: right;
@@ -47,7 +50,10 @@
         width: 20%;
     }
 
-    .interestedInDevelopment input {
-        display: inline;
+    .interestedInDevelopment {
+        padding-top: 5px;
+        input {
+            display: inline;
+        }
     }
 }
