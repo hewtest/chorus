@@ -32,11 +32,17 @@
             </tr>
 	    <tr>
                 <td class="label">{{t "signup.state"}}</td>
-                <td class="item">some other control</td>
+                <td class="item">
+		    <select>
+                        <option>Alabama</option>
+                        <option>Alaska</option>
+                        <option>...</option>
+                    </select>
+		</td>
             </tr>
 	    <tr>
                 <td class="label">{{t "signup.zip_code"}}</td>
-                <td class="item"><input type="text" name="city" size="10"/></td>
+                <td class="item"><input class="zipCode" type="text" name="zipCode" size="10"/></td>
             </tr>
 	    <tr>
                 <td class="label">{{t "signup.phone"}}</td>
